@@ -1,0 +1,13 @@
+body{
+   background-color: dimgrey;
+}
+h1{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(40, 30, 40);
+}
+h3{
+    text-align: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: rgb(57, 38, 57);
+}
