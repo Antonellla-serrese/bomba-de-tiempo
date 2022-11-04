@@ -5,9 +5,152 @@ h1{
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: rgb(40, 30, 40);
+    font-size: xx-large;
+    margin-top: 4%;
 }
+
+h2{
+    text-align: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: rgb(57, 38, 57);
+    font-size: xx-large;
+    margin-top: 6%;
+}
+
 h3{
     text-align: center;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     color: rgb(57, 38, 57);
+    font-size: xx-large;
+    margin-top: 4%;
+}
+
+input{
+    text-align: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: rgb(57, 38, 57);
+    font-size: xx-large;
+    border-radius: 15px;
+    margin-top: 2%;
+    margin-left: 38%;
+    cursor: pointer;
+}
+
+#irapantalla2{
+    display: flex;
+    text-align: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: rgb(57, 38, 57);
+    font-size: xx-large;
+    background-color: rgb(155, 132, 155);
+    margin-top: 5%;
+    margin-left: 45%;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#bombita{
+    margin-top: 12%;
+    width: 2.5%;
+    margin-left: 0.5%;
+}
+
+#bombadetiempo{
+    margin-left: 28%;
+    width: 40%;
+}
+p{
+    text-align: left;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: rgb(57, 38, 57);
+    font-size: x-large;
+    margin-top: 20%;
+}
+
+.contenedorcables{
+    margin-top: 0%;
+    margin-left: 34%;
+    display: flex;
+   
+}
+
+
+
+#cable1{
+    height: 300px;
+    width: 25px;
+   background: brown;
+   cursor:pointer;
+}
+
+#cable2{
+    height: 300px;
+    width: 25px;
+   background: rgb(10, 123, 59);
+   margin-left: 20px;
+   cursor:pointer;
+}
+
+#cable3{
+    height: 300px;
+    width: 25px;
+   background: rgb(42, 44, 165);
+   margin-left: 20px;
+   cursor:pointer;
+}
+
+#cable4{
+    height: 300px;
+    width: 25px;
+   background: rgb(195, 225, 72);
+   margin-left: 20px;
+   cursor:pointer;
+}
+
+#cable5{
+    height: 300px;
+    width: 25px;
+   background: rgb(149, 42, 165);
+   margin-left: 20px;
+   cursor:pointer;
+}
+
+#cable6{
+    height: 300px;
+    width: 25px;
+   background: rgb(221, 107, 14);
+   margin-left: 20px;
+   cursor:pointer;
+}
+
+#cable7{
+    height: 300px;
+    width: 25px;
+   background: rgb(82, 158, 216);
+   margin-left: 20px;
+   cursor:pointer;
+}
+
+#cable8{
+    height: 300px;
+    width: 25px;
+   background: rgb(170, 94, 112);
+   margin-left: 20px;
+   cursor:pointer;
+}
+
+#cable9{
+    height: 300px;
+    width: 25px;
+   background: rgb(42, 165, 155);
+   margin-left: 20px;
+   cursor:pointer;
+}
+
+#cable10{
+    height: 300px;
+    width: 25px;
+   background: rgb(165, 42, 138);
+   margin-left: 20px;
+   cursor:pointer;
 }

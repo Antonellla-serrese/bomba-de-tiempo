@@ -7,17 +7,71 @@
     <link rel="stylesheet" type="text/css" href="css/css.css">
     <title>Bomba de tiempo</title>
 </head>
+
 <body id="fondo">
+    
+<header id="nombre"></header>
 
-    <header id="nombreparticipante"></header>
+<section class="pantallas" id="pantalla1">
 
-    <h1>Bomba de tiempo</h1>
+    <h1 id="titulo">BOMBA DE TIEMPO</h1>
+
+    <h2>Bienvenido, te desafiamos a ganar nuestro juego</h2>
 
     <h3>
-    Tenes un mimnuto, una bomba y 10 cables.La misma se desactivara una vez que cortes el cable correcto.Por cada cable incorrecto se te restaran 10 segundos.Estas listo?
+        Tenes una bomba, 10 cables y 60 segundos para desavtivarla.<br>
+        Cada cable erroneo que cortes te restara 10 segundos de tiempo.<br>
+        Tenes que desactivar 3 bombas para ganar.<br>
+        Estas listo?
+
     </h3>
 
-    <button id="comienzo">Empezar</button>
-    
+    <input id="nombre-del-jugador" type="text" placeholder="Ingresa tu nombre">
+
+    <div>
+        <button id="irapantalla2">Comenzar</button>
+    </div>
+
+</section>
+
+<section class="pantallas" id="pantalla2">
+
+<img id="bombita" src="multimedia/bomba.png"><span id="cantbombas"></span>
+
+<div>
+    <img src="multimedia/bombita.png" id="bombadetiempo">
+</div>
+
+
+<div class="contenedorcables">
+
+    <div class="cables" id="cable1"></div>
+    <div class="cables" id="cable2"></div>
+    <div class="cables" id="cable3"></div>
+    <div class="cables" id="cable4"></div>
+    <div class="cables" id="cable5"></div>
+    <div class="cables" id="cable6"></div>
+    <div class="cables" id="cable7"></div>
+    <div class="cables" id="cable8"></div>
+    <div class="cables" id="cable9"></div>
+    <div class="cables" id="cable10"></div>
+
+</div>
+<div>
+    <p>
+        Cable incorrecto!<br>
+         Te quedan 10 segundos menos!
+    </p>
+</div>
+
+
+
+
+
+
+
+
+</section>
+
 </body>
 </html>
