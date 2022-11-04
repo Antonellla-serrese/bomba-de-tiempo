@@ -14,8 +14,8 @@
 
 <section class="pantallas" id="pantalla1">
 
-    <h1 id="titulo">BOMBA DE TIEMPO</h1>
-
+<img id="titulo" src="multimedia/titulo22.png">
+<div id="centrar">
     <h2>Bienvenido, te desafiamos a ganar nuestro juego</h2>
 
     <h3>
@@ -31,6 +31,7 @@
     <div>
         <button id="irapantalla2">Comenzar</button>
     </div>
+</div>
 
 </section>
 
@@ -87,11 +88,11 @@
 <script>
 
 var nombre = document.getElementById("nombre");
-var info = document.getElementById("nombreju").value;
-var boton1 = document.getElementById("irpantalla2");
+var info = document.getElementById("nombreju");
+var boton1 = document.getElementById("irapantalla2");
 
 boton1.onclick = function(){
-console.log(info)
+nombre.innerHTML = info.value;
 }
 
 
