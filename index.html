@@ -41,12 +41,20 @@
 <img id="bombita" src="multimedia/bomba.png"><span id="cantbombas"></span>
 
 <div>
-    <img src="multimedia/bombita.png" id="bombadetiempo">
+    <div id="contenedor-de-tiempo">
+        <h1 id="tiemporestante" >Tiempo Restante</h1>
+        <div id="cuentaregresiva">60</div>
+        <button id="activarbomba">Activar Bomba</button>
+       
+        </div>
+        <img src="multimedia/bombita.png" id="bombadetiempo">
 </div>
+
 
 
 <div class="contenedorcables">
 
+    <div class="cables" id="cable0"></div>
     <div class="cables" id="cable1"></div>
     <div class="cables" id="cable2"></div>
     <div class="cables" id="cable3"></div>
@@ -56,7 +64,6 @@
     <div class="cables" id="cable7"></div>
     <div class="cables" id="cable8"></div>
     <div class="cables" id="cable9"></div>
-    <div class="cables" id="cable10"></div>
 
 </div>
 <div>
@@ -73,16 +80,9 @@
 <section class="pantallas" id="pantalla3">
 
 
-
-
-
-
 </section>
 
 <section class="pantallas" id="pantalla4">
-
-
-
 
 </section>
 
@@ -94,12 +94,54 @@ var boton1 = document.getElementById("irapantalla2");
 
 boton1.onclick = function(){
 nombre.innerHTML = info.value;
+
+}
+
+var divcuentaregresiva = document.getElementById("cuentaregresiva");//div donde se veria la cuenta regresiva
+var activar= document.getElementById("activarbomba"); // boton que activa la bomba
+
+
+activar.onclick = function iniciarcuentaregresiva(){ // funcion de a cuenta regresiva
+    var valorinicial = 60;
+    var intervalo = setInterval(function(){
+        divcuentaregresiva.innerHTML = valorinicial;
+        if(valorinicial !== 0){
+            valorinicial --;
+        }
+      
+        
+    }, 1000);
+}
+
+// funciones de cables
+var random ;
+var cables= document.getElementsByClassName("cables");
+
+function reiniciarRandom (){      // FUNCION QUE REINICIA EL CABLE RANDOM
+    random =  Math.floor(Math.random()*(9-0+1))+0;
+    console.log(random);
 }
 
 
+// arma un cable ganador pide un numero random y le asigna esa clase a esa posicion 
+function cableGanador (){
+    reiniciarRandom();
+    cables[random].classList.add("ganador");
+    
+
+}
+cableGanador(); // cable que desactiva la bomba 
+
+var cantBombas= document.getElementById("cantbombas"); // dic para cantidad de bombas desactivadas
 
 
+// mirar el archivo prueba juego
+var prueba = document.getElementById("cable0");
+prueba.onclick = function cualquiera (){
+    console.log("1");
+}
 
+console.log(prueba);
 
 
 
