@@ -8,11 +8,11 @@
     <title>Bomba de tiempo</title>
 </head>
 
-<body id="fondo">
+<body id="fondo" style="background-image: url(./multimedia/fondo.jpg);">
     
 <header id="nombre"></header>
 
-<section class="pantallas" id="pantalla1" style="background-image: url(./multimedia/fondo.jpg);">
+<section class="pantallas" id="pantalla1">
     <audio src="./multimedia/musica-fondo-pantalla-1.m4a" type="audio/mpeg" autoplay="autoplay" loop="loop"></audio>
 
 <img id="titulo" src="multimedia/titulo22.png">
@@ -72,9 +72,6 @@
          Te quedan 10 segundos menos!
     </p>
 </div>
-
-
-
 </section>
 
 <section class="pantallas" id="pantalla3">
@@ -88,20 +85,29 @@
 
 <script>
 
+//pantalla 1    
+
 var nombre = document.getElementById("nombre");
 var info = document.getElementById("nombreju");
 var boton1 = document.getElementById("irapantalla2");
 
+//que el boton comenzar ponga header, vacie input y lleve a pantalla2
 boton1.onclick = function(){
-nombre.innerHTML = info.value;
+nombre.innerHTML = info.value;   //ponemos nombre del input en el header
+info.value="";                   // para que despues de ingresar el nombre vuelva a vaciarse el input
+                                // hay que agregar funcion para que lleve a pantalla 2
+
 
 }
 
-var divcuentaregresiva = document.getElementById("cuentaregresiva");//div donde se veria la cuenta regresiva
+//pantalla2
+
+//cronometro
+var divcuentaregresiva = document.getElementById("cuentaregresiva");//div donde se ve la cuenta regresiva
 var activar= document.getElementById("activarbomba"); // boton que activa la bomba
 
-
-activar.onclick = function iniciarcuentaregresiva(){ // funcion de a cuenta regresiva
+// funcion de la cuenta regresiva
+activar.onclick = function iniciarcuentaregresiva(){ 
     var valorinicial = 60;
     var intervalo = setInterval(function(){
         divcuentaregresiva.innerHTML = valorinicial;
@@ -114,10 +120,11 @@ activar.onclick = function iniciarcuentaregresiva(){ // funcion de a cuenta regr
 }
 
 // funciones de cables
-var random ;
-var cables= document.getElementsByClassName("cables");
+var random ; //para que nos de una posicion random
+var cables= document.getElementsByClassName("cables"); //cables que formaran parte del random
 
-function reiniciarRandom (){      // FUNCION QUE REINICIA EL CABLE RANDOM
+// FUNCION QUE REINICIA EL CABLE RANDOM
+function reiniciarRandom (){      
     random =  Math.floor(Math.random()*(9-0+1))+0;
     console.log(random);
 }
@@ -132,10 +139,10 @@ function cableGanador (){
 }
 cableGanador(); // cable que desactiva la bomba 
 
-var cantBombas= document.getElementById("cantbombas"); // dic para cantidad de bombas desactivadas
+var cantBombas= document.getElementById("cantbombas"); // div para cantidad de bombas
 
 
-// mirar el archivo prueba juego
+// mirar el archivo prueba juego AHORA FUNCIONA
 var prueba = document.getElementById("cable0");
 prueba.onclick = function cualquiera (){
     console.log("1");
