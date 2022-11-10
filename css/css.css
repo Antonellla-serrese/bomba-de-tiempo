@@ -6,10 +6,9 @@ header{
     font-size: xx-large;
     margin-left: 90%;
     position: fixed;
-    font-weight: bolder;
-    
-
+    font-weight: bolder;    
 }
+
 #fondo{
  background-position: 100%;
  height: 100%;
@@ -21,14 +20,14 @@ header{
 #titulo{
   width: 50%;
   margin-left: 25%;
-  margin-top: 10%;
+  margin-top: 5%;
   position: relative;
 }
 
 h2{
     text-align: center;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    color:#7d1313; 
+    color:white; 
     font-size: xx-large;
     position: relative;
     
@@ -37,7 +36,7 @@ h2{
 h3{
     text-align: center;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    color:#7d1313; 
+    color:white; 
     font-size: xx-large;
     position: relative;
 
@@ -52,7 +51,7 @@ input{
     margin-top: 2%;
     margin-left: 38%;
     cursor: pointer;
-    color:#7d1313; 
+    color:black; 
     position: relative;
 }
 
@@ -62,7 +61,7 @@ input{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     background-color: rgb(226, 208, 209);
     font-size: xx-large;
-    color:#7d1313; 
+    color:black; 
     margin-top: 5%;
     margin-left: 45%;
     border-radius: 15px;

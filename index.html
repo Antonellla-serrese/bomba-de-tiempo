@@ -14,16 +14,16 @@
 
 <section class="pantallas" id="pantalla1" >
 <audio src="./multimedia/musica-fondo-pantalla-1.m4a" type="audio/mpeg" autoplay="autoplay" loop="loop"></audio>
-<img id="fondo" src="./multimedia/fondo.jpg">
-<img id="titulo" src="multimedia/titulo22.png">
+<img id="fondo" src="./multimedia/fondo-tenebroso.png">
+<img id="titulo" src="multimedia/bomba-de-tiempo-text.png">
 <div id="centrar">
-    <h2>Bienvenido, te desafiamos a ganar nuestro juego</h2>
+    <h2>¡Bienvenido! Te desafiamos a ganar nuestro juego</h2>
 
     <h3>
         Tenes una bomba, 10 cables y 60 segundos para desactivarla.<br>
-        Cada cable erroneo que cortes te restara 10 segundos de tiempo.<br>
+        Cada cable erróneo que cortes, te restará 10 segundos de tiempo.<br>
         Tenes que desactivar 3 bombas para ganar.<br>
-        Estas listo?
+        ¿Estás listo?
     </h3>
 
     <input id="nombreju" type="text" placeholder="Ingresa tu nombre">
@@ -68,7 +68,7 @@
 <div id="ups">
     <p>
         Cable incorrecto!<br>
-         Te quedan 10 segundos menos!
+        Te quedan 10 segundos menos!
     </p>
 </div>
 </section>
@@ -237,9 +237,9 @@ function mostrarPantalla1(){
  }
 
  //pantalla 4 winer
-<<<<<<< HEAD
+
  //funcion para el boton
-=======
+
  //fincion para el boton
 
 if(divcuentaregresiva.innerHTML==0){
@@ -248,14 +248,14 @@ if(divcuentaregresiva.innerHTML==0){
 
 var cantBombas= document.getElementById("cantbombas").innerHTML; // div para cantidad de bombas
 var desactivaBomba = document.getElementsByClassName("ganador");
->>>>>>> c5d51bb9ad3b1f0f20b9fceffa9eeb89a4e96a0c
 
  var btnjugardenuevo2 = document.getElementById("jugardenuevo2");
 
-<<<<<<< HEAD
+
  btnjugardenuevo2.onclick = function () {
     mostrarPantalla1 ();
-=======
+ }
+
 for(i=0;i<desactivaBomba.length;i++){
     desactivaBomba[i].onclick=bomba_desactivada;
 }
@@ -273,7 +273,6 @@ function reiniciar_bomba(){
      clearInterval(intervalo);
      clearInterval(intervalo2);
      iniciarcuentaregresiva();
->>>>>>> c5d51bb9ad3b1f0f20b9fceffa9eeb89a4e96a0c
  }
 
 </script>
