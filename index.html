@@ -104,7 +104,7 @@ var boton1 = document.getElementById("irapantalla2");
 boton1.onclick = function(){
 nombre.innerHTML = info.value;   //ponemos nombre del input en el header
 info.value="";                   // para que despues de ingresar el nombre vuelva a vaciarse el input
-                                // hay que agregar funcion para que lleve a pantalla 2
+                               // hay que agregar funcion para que lleve a pantalla 2
 
 
 }
@@ -173,6 +173,7 @@ function cableincorrecto () {
                 if(resta !== 0){
                     resta --;
                 }
+                
             }, 1000);
             document.getElementById("ups").style.display="block"; //muestro el mensaje que avisa que tiene 10seg menos
             //el timeout establece que luego de ese tiempo, el mensaje desaparecera nuevamente.
