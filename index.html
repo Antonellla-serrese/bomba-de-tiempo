@@ -38,7 +38,7 @@
 <section class="pantallas" id="pantalla2">
 
 <img id="bombita" src="multimedia/bomba.png">
-<div id="cantbombas"></div>
+<div><span>Cantidad de bombas desactivadas: <div id="cantbombas">0</div></span></div>
 
 <div>
     <div id="contenedor-de-tiempo">
@@ -171,16 +171,6 @@ function cableGanador (){
 }
 cableGanador(); // cable que desactiva la bomba 
 
-//cuando haces click en el cable ganador te suma una bomba
-var cantBombas= document.getElementById("cantbombas"); // div para cantidad de bombas
-var desactivaBomba = document.getElementsByClassName("ganador");
-var contadorBombas = 0;
-//desactivaBomba.onclick = function(){
-//cantBombas.innerHTML = contadorBombas +1;
-//console.log("1");
-
-//}
-
 var intervalo2; //tengo que declarar la variable fuera de la funcion para que pueda darle clear desde todo el dom.
 
 //funcion que te lleva a la pantalla de looser
@@ -249,7 +239,32 @@ function mostrarPantalla1(){
  //pantalla 4 winer
  //fincion para el boton
 
- 
+if(divcuentaregresiva.innerHTML==0){
+    //pasar a pantalla perdiste
+}
+
+var cantBombas= document.getElementById("cantbombas").innerHTML; // div para cantidad de bombas
+var desactivaBomba = document.getElementsByClassName("ganador");
+
+
+for(i=0;i<desactivaBomba.length;i++){
+    desactivaBomba[i].onclick=bomba_desactivada;
+}
+
+ function bomba_desactivada(){
+        cantBombas=cantBombas+1;
+        //desactivaste una bomba, escribir div y usar display none, etc
+        reiniciar_bomba();
+        if(cantBombas==3){
+            alert("ganaste"); //mostrar pantalla ganadora
+        }
+ }
+function reiniciar_bomba(){
+     cableGanador();
+     clearInterval(intervalo);
+     clearInterval(intervalo2);
+     iniciarcuentaregresiva();
+ }
 
 </script>
 
