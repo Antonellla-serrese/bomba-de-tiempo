@@ -120,12 +120,9 @@ function mostrarPantalla2(){
 boton1.onclick = function(){
 nombre.innerHTML = info.value;   //ponemos nombre del input en el header
 info.value="";                   // para que despues de ingresar el nombre vuelva a vaciarse el input
-mostrarPantalla2();                               // hay que agregar funcion para que lleve a pantalla 2
-
+mostrarPantalla2();                               // funcion para que lleve a pantalla 2
 
 }
-
-
 
 //pantalla2
 
@@ -185,6 +182,7 @@ function mostrarPantalla3(){
             document.querySelector("#pantalla1").style.display = "none";
 			document.querySelector("#pantalla2").style.display = "none";
 			document.querySelector("#pantalla3").style.display = "block";
+            document.querySelector("#pantalla4").style.display = "none";
            
 		}
 
@@ -232,6 +230,7 @@ function mostrarPantalla1(){
             document.querySelector("#pantalla1").style.display = "block";
 			document.querySelector("#pantalla2").style.display = "none";
 			document.querySelector("#pantalla3").style.display = "none";
+            document.querySelector("#pantalla4").style.display = "none";
 		}
 
  var btnjugardnuevol =document.getElementById("jugardenuevol");
