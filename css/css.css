@@ -236,11 +236,11 @@ p{
    position: relative;
 }
 
-#cable10{
+#cable0{
     height: 300px;
     width: 25px;
    background: #320505;
-   margin-left: 20px;
+   margin-right: 20px;
    cursor:pointer;
    position: relative;
 }
