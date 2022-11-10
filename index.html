@@ -38,7 +38,8 @@
 
 <section class="pantallas" id="pantalla2">
 
-<img id="bombita" src="multimedia/bomba.png"><span id="cantbombas"></span>
+<img id="bombita" src="multimedia/bomba.png">
+<div id="cantbombas"></div>
 
 <div>
     <div id="contenedor-de-tiempo">
@@ -49,8 +50,6 @@
         </div>
         <img src="multimedia/bombita.png" id="bombadetiempo">
 </div>
-
-
 
 <div class="contenedorcables">
 
@@ -66,6 +65,7 @@
     <div class="cables" id="cable9"></div>
 
 </div>
+
 <div>
     <p>
         Cable incorrecto!<br>
@@ -134,22 +134,21 @@ function reiniciarRandom (){
 // arma un cable ganador pide un numero random y le asigna esa clase a esa posicion 
 function cableGanador (){
     reiniciarRandom();
-    cables[random].classList.add("ganador");
+    cables[random].setAttribute("class","ganador");
     
 
 }
 cableGanador(); // cable que desactiva la bomba 
 
+//cuando haces click en el cable ganador te suma una bomba
 var cantBombas= document.getElementById("cantbombas"); // div para cantidad de bombas
+var desactivaBomba = document.getElementsByClassName("ganador");
+var contadorBombas = 0;
+//desactivaBomba.onclick = function(){
+//cantBombas.innerHTML = contadorBombas +1;
+//console.log("1");
 
-
-// mirar el archivo prueba juego AHORA FUNCIONA
-var prueba = document.getElementById("cable0");
-prueba.onclick = function cualquiera (){
-    console.log("1");
-}
-
-console.log(prueba);
+//}
 
 var intervalo2; //tengo que declarar la variable fuera de la funcion para que pueda darle clear desde todo el dom.
 
