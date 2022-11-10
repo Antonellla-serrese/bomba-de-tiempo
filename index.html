@@ -133,7 +133,8 @@ var activar= document.getElementById("activarbomba"); // boton que activa la bom
 var intervalo; //tengo que declarar la variable fuera de la funcion para que pueda darle clear desde todo el dom.
 
 // funcion de la cuenta regresiva
-activar.onclick = function iniciarcuentaregresiva(){ 
+
+function iniciarcuentaregresiva(){ 
     var valorinicial = 60;
         intervalo = setInterval(function(){
         divcuentaregresiva.innerHTML = valorinicial;
@@ -144,6 +145,10 @@ activar.onclick = function iniciarcuentaregresiva(){
         
     }, 1000);
     
+}
+activar.onclick = function(){
+    clearInterval(intervalo);
+    iniciarcuentaregresiva();
 }
 
 // funciones de cables
