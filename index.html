@@ -235,6 +235,9 @@ function mostrarPantalla1(){
  }
 
  //pantalla 4 winer
+<<<<<<< HEAD
+ //funcion para el boton
+=======
  //fincion para el boton
 
 if(divcuentaregresiva.innerHTML==0){
@@ -243,8 +246,14 @@ if(divcuentaregresiva.innerHTML==0){
 
 var cantBombas= document.getElementById("cantbombas").innerHTML; // div para cantidad de bombas
 var desactivaBomba = document.getElementsByClassName("ganador");
+>>>>>>> c5d51bb9ad3b1f0f20b9fceffa9eeb89a4e96a0c
 
+ var btnjugardenuevo2 = document.getElementById("jugardenuevo2");
 
+<<<<<<< HEAD
+ btnjugardenuevo2.onclick = function () {
+    mostrarPantalla1 ();
+=======
 for(i=0;i<desactivaBomba.length;i++){
     desactivaBomba[i].onclick=bomba_desactivada;
 }
@@ -262,6 +271,7 @@ function reiniciar_bomba(){
      clearInterval(intervalo);
      clearInterval(intervalo2);
      iniciarcuentaregresiva();
+>>>>>>> c5d51bb9ad3b1f0f20b9fceffa9eeb89a4e96a0c
  }
 
 </script>
