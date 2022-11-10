@@ -1,6 +1,5 @@
-body{
-    background-repeat: no-repeat;
-}
+
+
 header{
     color:#7d1313; 
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -71,7 +70,7 @@ input{
 }
 
 #pantalla2{
-    margin-top: 20%;
+    margin-top: 0%;
   }
 
 #bombita{
