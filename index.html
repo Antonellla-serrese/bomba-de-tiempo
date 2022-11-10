@@ -70,6 +70,8 @@
 
 <div id="ups">
     <p>
+         Cable incorrecto!<br>
+         Te quedan 10 segundos menos!
         Cable incorrecto!<br>
         Te quedan 10 segundos menos!
     </p>
@@ -125,7 +127,7 @@ boton1.onclick = function(){
 nombre.innerHTML = info.value;   //ponemos nombre del input en el header
 info.value="";                   // para que despues de ingresar el nombre vuelva a vaciarse el input
 mostrarPantalla2();                               // funcion para que lleve a pantalla 2
-
+iniciarcuentaregresiva();
 }
 
 //pantalla2
@@ -139,7 +141,8 @@ var intervalo; //tengo que declarar la variable fuera de la funcion para que pue
 
 function iniciarcuentaregresiva(){ 
     var valorinicial = 60;
-        intervalo = setInterval(function(){
+    divcuentaregresiva.innerHTML = valorinicial;
+    intervalo = setInterval(function(){
         divcuentaregresiva.innerHTML = valorinicial;
         if(valorinicial !== 0){
             valorinicial --;
@@ -149,6 +152,7 @@ function iniciarcuentaregresiva(){
     }, 1000);
     
 }
+
 activar.onclick = function(){
     clearInterval(intervalo);
     iniciarcuentaregresiva();
@@ -175,14 +179,6 @@ cableGanador(); // cable que desactiva la bomba
 
 var intervalo2; //tengo que declarar la variable fuera de la funcion para que pueda darle clear desde todo el dom.
 
-//funcion que te lleva a la pantalla de looser
-function mostrarPantalla3(){
-            document.querySelector("#pantalla1").style.display = "none";
-			document.querySelector("#pantalla2").style.display = "none";
-			document.querySelector("#pantalla3").style.display = "block";
-            document.querySelector("#pantalla4").style.display = "none";
-           
-		}
 
 //funcion para restar 10 segundos al contador
 function cableincorrecto () {
@@ -217,6 +213,16 @@ for(i=0;i<cables.length; i++){
     }
 }
 
+//funcion que te lleva a la pantalla3 de looser
+function mostrarPantalla3(){
+            document.querySelector("#pantalla1").style.display = "none";
+			document.querySelector("#pantalla2").style.display = "none";
+			document.querySelector("#pantalla3").style.display = "block";
+            document.querySelector("#pantalla4").style.display = "none";
+           
+		}
+
+
 //pantalla 3 looser
 //funcion para que el boton jugar de nuevo lleve a pantalla1 para jugar de nuevo despues de perder
 function mostrarPantalla1(){
@@ -229,7 +235,17 @@ function mostrarPantalla1(){
  var btnjugardnuevol =document.getElementById("jugardenuevol");
 
  btnjugardnuevol. onclick = function(){
+    clearInterval(intervalo);
+    clearInterval(intervalo2);
     mostrarPantalla1();
+    activar.onclick = function(){
+    clearInterval(intervalo);
+    clearInterval(intervalo2);
+    iniciarcuentaregresiva();
+    
+}
+   
+    
  }
 
  //pantalla 4 winer
@@ -247,7 +263,6 @@ function reiniciocable(){
 
  var btnjugardenuevo2 = document.getElementById("jugardenuevo2");
 
- var btnjugardenuevo2 = document.getElementById("jugardenuevo2");
 
 
  btnjugardenuevo2.onclick = function () {
