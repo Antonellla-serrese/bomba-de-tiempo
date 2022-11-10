@@ -15,7 +15,7 @@ header{
  height: 100%;
  width: 100%;
  position: absolute;
- 
+
 }
 
 #titulo{
@@ -72,6 +72,7 @@ input{
 
 #pantalla2{
     margin-top: 0%;
+    padding-top: 0%;
   }
 
 #bombita{
