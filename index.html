@@ -14,16 +14,17 @@
 
 <section class="pantallas" id="pantalla1" >
 <audio src="./multimedia/musica-fondo-pantalla-1.m4a" type="audio/mpeg" autoplay="autoplay" loop="loop"></audio>
-<img id="fondo" src="./multimedia/fondo.jpg">
-<img id="titulo" src="multimedia/titulo22.png">
+<img id="fondo" src="./multimedia/fondo-tenebroso.png">
+<img id="titulo" src="multimedia/bomba-de-tiempo-text.png">
 <div id="centrar">
-    <h2>Bienvenido, te desafiamos a ganar nuestro juego</h2>
+
+    <h2>¡Bienvenido! Te desafiamos a ganar nuestro juego</h2>
 
     <h3>
         Tenes una bomba, 10 cables y 60 segundos para desactivarla.<br>
-        Cada cable erroneo que cortes te restara 10 segundos de tiempo.<br>
+        Cada cable erróneo que cortes, te restará 10 segundos de tiempo.<br>
         Tenes que desactivar 3 bombas para ganar.<br>
-        Estas listo?
+        ¿Estás listo?
     </h3>
 
     <input id="nombreju" type="text" placeholder="Ingresa tu nombre">
@@ -31,12 +32,14 @@
     <div>
         <button id="irapantalla2">Comenzar</button>
     </div>
+
 </div>
 
 </section>
 
 <section class="pantallas" id="pantalla2">
 
+<img id="fondo2" src="multimedia/fondo-oscuro.jpeg">
 <img id="bombita" src="multimedia/bomba.png">
 <div><span>Cantidad de bombas desactivadas: <div id="cantbombas">0</div></span></div>
 
@@ -68,7 +71,7 @@
 <div id="ups">
     <p>
         Cable incorrecto!<br>
-         Te quedan 10 segundos menos!
+        Te quedan 10 segundos menos!
     </p>
 </div>
 </section>
@@ -133,7 +136,8 @@ var activar= document.getElementById("activarbomba"); // boton que activa la bom
 var intervalo; //tengo que declarar la variable fuera de la funcion para que pueda darle clear desde todo el dom.
 
 // funcion de la cuenta regresiva
-activar.onclick = function(){
+
+function(){
     iniciarcuentaregresiva();
 }
 function iniciarcuentaregresiva(){ 
@@ -147,6 +151,10 @@ function iniciarcuentaregresiva(){
         
     }, 1000);
     
+}
+activar.onclick = function(){
+    clearInterval(intervalo);
+    iniciarcuentaregresiva();
 }
 
 // funciones de cables
@@ -165,7 +173,6 @@ function cableGanador (){
     reiniciarRandom();
     cables[random].setAttribute("class","ganador");
     
-
 }
 cableGanador(); // cable que desactiva la bomba 
 
@@ -179,7 +186,6 @@ function mostrarPantalla3(){
             document.querySelector("#pantalla4").style.display = "none";
            
 		}
-
 
 //funcion para restar 10 segundos al contador
 function cableincorrecto () {
@@ -230,6 +236,9 @@ function mostrarPantalla1(){
  }
 
  //pantalla 4 winer
+
+ //funcion para el boton
+
  //fincion para el boton
 
 if(divcuentaregresiva.innerHTML==0){
@@ -239,6 +248,18 @@ var desactivaBomba;
 function reiniciocable(){
     desactivaBomba = document.getElementsByClassName("ganador");
 
+ var btnjugardenuevo2 = document.getElementById("jugardenuevo2");
+
+ var btnjugardenuevo2 = document.getElementById("jugardenuevo2");
+
+
+ btnjugardenuevo2.onclick = function () {
+    mostrarPantalla1 ();
+ }
+
+ btnjugardenuevo2.onclick = function () {
+    mostrarPantalla1 ();
+ }
 
 for(i=0;i<desactivaBomba.length;i++){
     desactivaBomba[i].onclick=function(){
