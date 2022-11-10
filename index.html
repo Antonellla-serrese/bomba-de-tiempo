@@ -133,7 +133,10 @@ var activar= document.getElementById("activarbomba"); // boton que activa la bom
 var intervalo; //tengo que declarar la variable fuera de la funcion para que pueda darle clear desde todo el dom.
 
 // funcion de la cuenta regresiva
-activar.onclick = function iniciarcuentaregresiva(){ 
+activar.onclick = function(){
+    iniciarcuentaregresiva();
+}
+function iniciarcuentaregresiva(){ 
     var valorinicial = 60;
         intervalo = setInterval(function(){
         divcuentaregresiva.innerHTML = valorinicial;
@@ -181,9 +184,9 @@ function mostrarPantalla3(){
 //funcion para restar 10 segundos al contador
 function cableincorrecto () {
     var timeactual = divcuentaregresiva.innerHTML;
-    var resta= divcuentaregresiva.innerHTML=timeactual-10;
+    var resta= timeactual-10;
         if (resta<0) {
-            resta= divcuentaregresiva.innerHTML=0;
+            resta= 0;
           mostrarPantalla3();
         }
             clearInterval(intervalo); 
@@ -207,13 +210,8 @@ function cableincorrecto () {
 for(i=0;i<cables.length; i++){
     if (cables[i].getAttribute("class")=="cables") {
         cables[i].onclick= cableincorrecto;
-        
+        console.log(cables[i]);
     }
-    else{
-        if(cables[i].getAttribute("class")!="cables"){
-            //funcion de ganar aun no definida
-    }
-}
 }
 
 //pantalla 3 looser
@@ -237,25 +235,39 @@ function mostrarPantalla1(){
 if(divcuentaregresiva.innerHTML==0){
     //pasar a pantalla perdiste
 }
-
-var cantBombas= document.getElementById("cantbombas").innerHTML; // div para cantidad de bombas
-var desactivaBomba = document.getElementsByClassName("ganador");
+var desactivaBomba;
+function reiniciocable(){
+    desactivaBomba = document.getElementsByClassName("ganador");
 
 
 for(i=0;i<desactivaBomba.length;i++){
-    desactivaBomba[i].onclick=bomba_desactivada;
+    desactivaBomba[i].onclick=function(){
+    bomba_desactivada();
+    }
+    console.log(desactivaBomba[i]);
 }
 
+}
+reiniciocable();
+
  function bomba_desactivada(){
-        cantBombas=cantBombas+1;
+    var cantBombas= parseInt(document.getElementById("cantbombas").innerHTML);
+    var bomba_actual=cantBombas+1;
+    document.getElementById("cantbombas").innerHTML=bomba_actual;
         //desactivaste una bomba, escribir div y usar display none, etc
         reiniciar_bomba();
-        if(cantBombas==3){
+        if(bomba_actual==3){
             alert("ganaste"); //mostrar pantalla ganadora
         }
  }
 function reiniciar_bomba(){
+    for(i=0;i<desactivaBomba.length;i++){
+        if(desactivaBomba[i].getAttribute("class")=="ganador"){
+            desactivaBomba[i].setAttribute("class","cables");
+             }
+    }
      cableGanador();
+    reiniciocable();
      clearInterval(intervalo);
      clearInterval(intervalo2);
      iniciarcuentaregresiva();
