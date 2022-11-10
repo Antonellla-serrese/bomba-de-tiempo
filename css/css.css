@@ -73,6 +73,7 @@ input{
 #pantalla2{
     margin-top: 0%;
     padding-top: 0%;
+    display: none;
   }
 
 #bombita{
@@ -223,6 +224,10 @@ p{
     display: none;
 }
 
+#pantalla3{
+    display: none;
+}
+
 #looser{
     width: 40%;
     margin-top: 5%;
@@ -232,12 +237,12 @@ p{
 
 #rip{
     width: 60%;
-    margin-top: 2%;
+    margin-top: 0%;
     margin-left: 21%;
     margin-bottom: 5%;
 }
 
-#jugardenuevo{
+#jugardenuevol{
     font-size: xx-large;
     width: 30%;
     margin-left: 35%;
