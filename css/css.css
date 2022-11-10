@@ -222,6 +222,9 @@ p{
 }
 #ups{
     display: none;
+    position: relative;
+    margin-top: 20%;
+
 }
 
 #pantalla3{
