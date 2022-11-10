@@ -249,13 +249,20 @@ function mostrarPantalla1(){
  }
 
  //pantalla 4 winer
+ function mostrarPantalla4(){
+            document.querySelector("#pantalla1").style.display = "none";
+			document.querySelector("#pantalla2").style.display = "none";
+			document.querySelector("#pantalla3").style.display = "none";
+            document.querySelector("#pantalla4").style.display = "block";
+		}
 
  //funcion para el boton
+ 
 
  //fincion para el boton
 
 if(divcuentaregresiva.innerHTML==0){
-    //ANTO AGREGALE LA FUNCION DE PASAR A PANTALLA PERDEDOR
+    mostrarPantalla3(); //revisar
 }
 var desactivaBomba;
 function reiniciocable(){
@@ -290,7 +297,7 @@ reiniciocable();
         //desactivaste una bomba, escribir div y usar display none, etc
         reiniciar_bomba();
         if(bomba_actual==3){
-            alert("ganaste"); //mostrar pantalla ganadora
+            mostrarPantalla4();
         }
  }
 function reiniciar_bomba(){
