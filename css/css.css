@@ -244,15 +244,6 @@ p{
 
 }
 
-#texto{
-    margin-top: 1%;
-    margin-left: 32%;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: xx-large;
-    font-weight: bolder;
-    color:#360eb9;
-
-}
 
 #rip{
     width: 60%;
@@ -267,6 +258,20 @@ p{
     margin-left: 35%;
     cursor: pointer;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    border-radius: 15px;
+    border-radius: 25px;
+    background-color:black;
+    color: white;
+
+}
+
+#jugardenuevo2{
+    font-size: xx-large;
+    width: 30%;
+    margin-left: 35%;
+    cursor: pointer;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    border-radius: 25px;
+    background-color:lemonchiffon;
+    color: black;
 
 }
