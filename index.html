@@ -164,7 +164,7 @@ var cables= document.getElementsByClassName("cables"); //cables que formaran par
 
 // FUNCION QUE REINICIA EL CABLE RANDOM
 function reiniciarRandom (){      
-    random =  Math.floor(Math.random()*(9-0+1))+0;
+    random =  Math.floor(Math.random()*(9-0))+0;
     console.log(random);
 }
 
@@ -257,10 +257,6 @@ function mostrarPantalla1(){
 if(divcuentaregresiva.innerHTML==0){
     //ANTO AGREGALE LA FUNCION DE PASAR A PANTALLA PERDEDOR
 }
-var desactivaBomba;
-function reiniciocable(){
-    desactivaBomba = document.getElementsByClassName("ganador");
-
  var btnjugardenuevo2 = document.getElementById("jugardenuevo2");
 
 
@@ -268,42 +264,46 @@ function reiniciocable(){
  btnjugardenuevo2.onclick = function () {
     mostrarPantalla1 ();
  }
+var desactivaBomba; //Declaro variable fuera, este sera el cable ganador
 
- btnjugardenuevo2.onclick = function () {
-    mostrarPantalla1 ();
- }
-
-for(i=0;i<desactivaBomba.length;i++){
-    desactivaBomba[i].onclick=function(){
-    bomba_desactivada();
+//Funcion que reinicia el cable
+function reiniciocable(){
+    desactivaBomba = document.getElementsByClassName("ganador"); //CONSULTO CUAL ES EL CABLE CON LA CLASE "GANADOR"
+    //el for asigna la funcion ganadora al cable
+    for(i=0;i<desactivaBomba.length;i++){
+        desactivaBomba[i].onclick=function(){
+        bomba_desactivada(); //LLAMA A LA FUNCION QUE DESACTIVA LA BOMBA
+        }
+        console.log(desactivaBomba[i]);
     }
-    console.log(desactivaBomba[i]);
 }
+reiniciocable();//LLAMO A LA FUNCION Y ASI YA ASIGNO CLASE Y FUNCION GANADORA.
 
-}
-reiniciocable();
-
+//FUNCION QUE SE ACTIVA CUANDO DESACTIVAS UNA BOMBA
  function bomba_desactivada(){
     var cantBombas= parseInt(document.getElementById("cantbombas").innerHTML);
-    var bomba_actual=cantBombas+1;
-    document.getElementById("cantbombas").innerHTML=bomba_actual;
+    var bomba_actual=cantBombas+1; //VAMOS AUMENTANDO DE A 1 LA CANTIDAD DE BOMBAS DESACTIVADAS
+    document.getElementById("cantbombas").innerHTML=bomba_actual; //LE DIGO EL NUEVO VALOR DE LA CANTIDAD DE BOMBAS
         //desactivaste una bomba, escribir div y usar display none, etc
-        reiniciar_bomba();
+        reiniciar_bomba();//LLAMO A LA FUNCION QUE REINICIA LA BOMBA
+        //LE PREGUNTO CUANTAS BOMBAS DESACTIVE Y SI SON 3, QUE ME MANDE A LA PANTALLA GANADORA
         if(bomba_actual==3){
-            alert("ganaste"); //mostrar pantalla ganadora
+           
         }
  }
+
+ //Funcion que me reinicia la bomba
 function reiniciar_bomba(){
     for(i=0;i<desactivaBomba.length;i++){
-        if(desactivaBomba[i].getAttribute("class")=="ganador"){
-            desactivaBomba[i].setAttribute("class","cables");
+        if(desactivaBomba[i].getAttribute("class")=="ganador"){ //recorro el cable con clase "ganador"
+            desactivaBomba[i].setAttribute("class","cables"); //Le devuelvo la clase "cables"
              }
     }
-     cableGanador();
-    reiniciocable();
-     clearInterval(intervalo);
+     cableGanador();//Llamo a la funcion que me reasigna
+    reiniciocable();//Reinicio los cables para que otro cable vuelva a tener la clase "ganador"
+     clearInterval(intervalo);//Limpio intervalos ya que voy a iniciar de nuevo
      clearInterval(intervalo2);
-     iniciarcuentaregresiva();
+     iniciarcuentaregresiva();//llamo a la cuenta regresiva para que todo este en 60 nuevamente, al no asignar un onclick, esta empezara por si sola
  }
 
 </script>
