@@ -209,3 +209,6 @@ p{
    margin-left: 20px;
    cursor:pointer;
 }
+#ups{
+    display: none;
+}

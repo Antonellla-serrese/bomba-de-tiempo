@@ -66,7 +66,7 @@
 
 </div>
 
-<div>
+<div id="ups">
     <p>
         Cable incorrecto!<br>
          Te quedan 10 segundos menos!
@@ -156,7 +156,7 @@ var intervalo2; //tengo que declarar la variable fuera de la funcion para que pu
 function cableincorrecto () {
     var timeactual = divcuentaregresiva.innerHTML;
     var resta= divcuentaregresiva.innerHTML=timeactual-10;
-            clearInterval(intervalo);
+            clearInterval(intervalo); 
             clearInterval(intervalo2);
              intervalo2 = setInterval(function(){
                 divcuentaregresiva.innerHTML = resta;
@@ -164,6 +164,12 @@ function cableincorrecto () {
                     resta --;
                 }
             }, 1000);
+            document.getElementById("ups").style.display="block"; //muestro el mensaje que avisa que tiene 10seg menos
+            //el timeout establece que luego de ese tiempo, el mensaje desaparecera nuevamente.
+            setTimeout(function(){
+                document.getElementById("ups").style.display="none";
+            },2000);
+            
 }
 
 //Un For recorre los cables y asigna las funciones correspondientes segun la clase
