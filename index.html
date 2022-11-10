@@ -48,7 +48,7 @@
         <button id="activarbomba">Activar Bomba</button>
        
         </div>
-        <img src="multimedia/bombita.png" id="bombadetiempo">
+        <img src="multimedia/bomba-central.png" id="bombadetiempo">
 </div>
 
 <div class="contenedorcables">
@@ -76,6 +76,15 @@
 
 <section class="pantallas" id="pantalla3">
 
+    <img id="looser" src="multimedia/looser.png">
+
+    <button id="jugardenuevo">Jugar de nuevo</button>
+
+    <img id="rip" src="multimedia/rip.png">
+
+ 
+
+ 
 
 </section>
 
@@ -115,9 +124,10 @@ activar.onclick = function iniciarcuentaregresiva(){
         if(valorinicial !== 0){
             valorinicial --;
         }
-      
+          
         
     }, 1000);
+    
 }
 
 // funciones de cables
@@ -185,7 +195,9 @@ for(i=0;i<cables.length; i++){
 }
 }
 
-
+// revisar que cuando la bomba llega a cero no deja de contar,
+// sigue en -1, -2 y asi y si le das activar de nuevo vuelve a 60 pero mostrando ese bug
+//
 
 
 
