@@ -105,11 +105,12 @@ info.value="";                   // para que despues de ingresar el nombre vuelv
 //cronometro
 var divcuentaregresiva = document.getElementById("cuentaregresiva");//div donde se ve la cuenta regresiva
 var activar= document.getElementById("activarbomba"); // boton que activa la bomba
+var intervalo; //tengo que declarar la variable fuera de la funcion para que pueda darle clear desde todo el dom.
 
 // funcion de la cuenta regresiva
 activar.onclick = function iniciarcuentaregresiva(){ 
     var valorinicial = 60;
-    var intervalo = setInterval(function(){
+        intervalo = setInterval(function(){
         divcuentaregresiva.innerHTML = valorinicial;
         if(valorinicial !== 0){
             valorinicial --;
@@ -149,6 +150,39 @@ prueba.onclick = function cualquiera (){
 }
 
 console.log(prueba);
+
+var intervalo2; //tengo que declarar la variable fuera de la funcion para que pueda darle clear desde todo el dom.
+
+//funcion para restar 10 segundos al contador
+function cableincorrecto () {
+    var timeactual = divcuentaregresiva.innerHTML;
+    var resta= divcuentaregresiva.innerHTML=timeactual-10;
+            clearInterval(intervalo);
+            clearInterval(intervalo2);
+             intervalo2 = setInterval(function(){
+                divcuentaregresiva.innerHTML = resta;
+                if(resta !== 0){
+                    resta --;
+                }
+            }, 1000);
+}
+
+//Un For recorre los cables y asigna las funciones correspondientes segun la clase
+for(i=0;i<cables.length; i++){
+    if (cables[i].getAttribute("class")=="cables") {
+        cables[i].onclick= cableincorrecto;
+        
+    }
+    else{
+        if(cables[i].getAttribute("class")!="cables"){
+            
+    }
+}
+}
+
+
+
+
 
 
 
