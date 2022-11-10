@@ -8,7 +8,7 @@
     <title>Bomba de tiempo</title>
 </head>
 
-<body id="fondo" style="background-image: url(./multimedia/fondo.jpg);">
+<body>
     
 <header id="nombre"></header>
 
@@ -24,7 +24,6 @@
         Cada cable erroneo que cortes te restara 10 segundos de tiempo.<br>
         Tenes que desactivar 3 bombas para ganar.<br>
         Estas listo?
-
     </h3>
 
     <input id="nombreju" type="text" placeholder="Ingresa tu nombre">
@@ -39,7 +38,7 @@
 <section class="pantallas" id="pantalla2">
 
 <img id="bombita" src="multimedia/bomba.png">
-<div><span>Cantidad de bombas desactivadas: </span><div id="cantbombas">0</div></div>
+<div><span>Cantidad de bombas desactivadas: <div id="cantbombas">0</div></span></div>
 
 <div>
     <div id="contenedor-de-tiempo">
@@ -78,15 +77,25 @@
 
     <img id="looser" src="multimedia/looser.png">
 
-    <button id="jugardenuevo">Jugar de nuevo</button>
+    <button id="jugardenuevol">Jugar de nuevo</button>
 
-    <img id="rip" src="multimedia/rip.png">
-
- 
-
- 
+    <img id="rip" src="multimedia/rip.png"> 
 
 </section>
+
+
+
+<section class="pantallas" id="pantalla4">
+
+    <img id="winner" src="multimedia/winner-text.png">
+
+    <button id="jugardenuevo2">Jugar de nuevo</button>
+
+    <img id="copa" src="multimedia/copa.png">
+    
+</section>
+
+
 
 <section class="pantallas" id="pantalla4">
 
@@ -101,21 +110,20 @@ var info = document.getElementById("nombreju");
 var boton1 = document.getElementById("irapantalla2");
 
 //funciones mostrar pantalla 2
-function mostrarPantalla1(){
+function mostrarPantalla2(){
 			document.querySelector("#pantalla1").style.display = "none";
 			document.querySelector("#pantalla2").style.display = "block";
+            document.querySelector("#pantalla3").style.display = "none";
+            document.querySelector("#pantalla4").style.display = "none";
 		}
 
 //que el boton comenzar ponga header, vacie input y lleve a pantalla2
 boton1.onclick = function(){
 nombre.innerHTML = info.value;   //ponemos nombre del input en el header
 info.value="";                   // para que despues de ingresar el nombre vuelva a vaciarse el input
-mostrarPantalla1();                               // hay que agregar funcion para que lleve a pantalla 2
-
+mostrarPantalla2();                               // funcion para que lleve a pantalla 2
 
 }
-
-
 
 //pantalla2
 
@@ -124,10 +132,8 @@ var divcuentaregresiva = document.getElementById("cuentaregresiva");//div donde 
 var activar= document.getElementById("activarbomba"); // boton que activa la bomba
 var intervalo; //tengo que declarar la variable fuera de la funcion para que pueda darle clear desde todo el dom.
 
-// funcion de la cuenta regresiva llamada por el boton "activar"
-activar.onclick =  iniciarcuentaregresiva();
+// funcion de la cuenta regresiva
 
-//funcion que inicia la cuenta regresiva, la volví funcion para poder llamarla desde todo el dom
 function iniciarcuentaregresiva(){ 
     var valorinicial = 60;
         intervalo = setInterval(function(){
@@ -139,6 +145,10 @@ function iniciarcuentaregresiva(){
         
     }, 1000);
     
+}
+activar.onclick = function(){
+    clearInterval(intervalo);
+    iniciarcuentaregresiva();
 }
 
 // funciones de cables
@@ -163,22 +173,32 @@ cableGanador(); // cable que desactiva la bomba
 
 var intervalo2; //tengo que declarar la variable fuera de la funcion para que pueda darle clear desde todo el dom.
 
+//funcion que te lleva a la pantalla de looser
+function mostrarPantalla3(){
+            document.querySelector("#pantalla1").style.display = "none";
+			document.querySelector("#pantalla2").style.display = "none";
+			document.querySelector("#pantalla3").style.display = "block";
+            document.querySelector("#pantalla4").style.display = "none";
+           
+		}
+
+
 //funcion para restar 10 segundos al contador
 function cableincorrecto () {
     var timeactual = divcuentaregresiva.innerHTML;
     var resta= divcuentaregresiva.innerHTML=timeactual-10;
-    // si se equivoca demasiadas veces, el contador se pone en 0 y alerta un perdiste(cambiar por la imagen, luego)
         if (resta<0) {
             resta= divcuentaregresiva.innerHTML=0;
-            alert("perdiste");
-        } 
+          mostrarPantalla3();
+        }
             clearInterval(intervalo); 
             clearInterval(intervalo2);
              intervalo2 = setInterval(function(){
                 divcuentaregresiva.innerHTML = resta;
                 if(resta > 0){
                     resta --;
-                }     
+                }
+                
             }, 1000);
             document.getElementById("ups").style.display="block"; //muestro el mensaje que avisa que tiene 10seg menos
             //el timeout establece que luego de ese tiempo, el mensaje desaparecera nuevamente.
@@ -187,11 +207,6 @@ function cableincorrecto () {
             },2000);
             
 }
-if(divcuentaregresiva.innerHTML==0){
-    //perdiste
-}
-
-var desactivaBomba = document.getElementsByClassName("ganador");
 
 //Un For recorre los cables y asigna las funciones correspondientes segun la clase
 for(i=0;i<cables.length; i++){
@@ -199,42 +214,66 @@ for(i=0;i<cables.length; i++){
         cables[i].onclick= cableincorrecto;
         
     }
+    else{
+        if(cables[i].getAttribute("class")!="cables"){
+            //funcion de ganar aun no definida
+    }
 }
-for(i=0;i<desactivaBomba.length;i++){
-    desactivaBomba[i].onclick=bombadesactivada;
-}
-//cuando haces click en el cable ganador te suma una bomba
-var cantBombas= document.getElementById("cantbombas").innerHTML; // div para cantidad de bombas
-
-function bombadesactivada (){
-        cantBombas=cantBombas+1;
-        alert("desactivaste una bomba");
-        reiniciar_bomba();
-        if(cantBombas==3){
-            alert("ganaste");
-        }
-
-    
-}    
-/*La funcion reinicia toda la bomba
-cable ganador esta definida previamente, reinicia el ramdom y el cable que cambia de clase
-clear para que se detenga cualquiera de los intervalos que se haya esatdo ejecutando
-iniciar cuenta regresiva es la funcion que setea el intervalo*/
-function reiniciar_bomba(){
-    cableGanador();
-    clearInterval(intervalo); 
-    clearInterval(intervalo2);
-    iniciarcuentaregresiva();
 }
 
+//pantalla 3 looser
+//funcion para que el boton jugar de nuevo lleve a pantalla1 para jugar de nuevo despues de perder
+function mostrarPantalla1(){
+            document.querySelector("#pantalla1").style.display = "block";
+			document.querySelector("#pantalla2").style.display = "none";
+			document.querySelector("#pantalla3").style.display = "none";
+            document.querySelector("#pantalla4").style.display = "none";
+		}
+
+ var btnjugardnuevol =document.getElementById("jugardenuevol");
+
+ btnjugardnuevol. onclick = function(){
+    mostrarPantalla1();
+ }
 
  //pantalla 4 winer
+<<<<<<< HEAD
  //funcion para el boton
+=======
+ //fincion para el boton
+
+if(divcuentaregresiva.innerHTML==0){
+    //pasar a pantalla perdiste
+}
+
+var cantBombas= document.getElementById("cantbombas").innerHTML; // div para cantidad de bombas
+var desactivaBomba = document.getElementsByClassName("ganador");
+>>>>>>> c5d51bb9ad3b1f0f20b9fceffa9eeb89a4e96a0c
 
  var btnjugardenuevo2 = document.getElementById("jugardenuevo2");
 
+<<<<<<< HEAD
  btnjugardenuevo2.onclick = function () {
     mostrarPantalla1 ();
+=======
+for(i=0;i<desactivaBomba.length;i++){
+    desactivaBomba[i].onclick=bomba_desactivada;
+}
+
+ function bomba_desactivada(){
+        cantBombas=cantBombas+1;
+        //desactivaste una bomba, escribir div y usar display none, etc
+        reiniciar_bomba();
+        if(cantBombas==3){
+            alert("ganaste"); //mostrar pantalla ganadora
+        }
+ }
+function reiniciar_bomba(){
+     cableGanador();
+     clearInterval(intervalo);
+     clearInterval(intervalo2);
+     iniciarcuentaregresiva();
+>>>>>>> c5d51bb9ad3b1f0f20b9fceffa9eeb89a4e96a0c
  }
 
 </script>
