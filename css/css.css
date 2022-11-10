@@ -11,16 +11,18 @@ header{
     
 
 }
-#pantalla1{
+#fondo{
  background-position: 100%;
  height: 100%;
  width: 100%;
+ position: absolute;
 }
 
 #titulo{
   width: 50%;
   margin-left: 25%;
   margin-top: 10%;
+  position: relative;
 }
 
 h2{
@@ -28,6 +30,7 @@ h2{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     color:#7d1313; 
     font-size: xx-large;
+    position: relative;
     
 }
 
@@ -36,6 +39,7 @@ h3{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     color:#7d1313; 
     font-size: xx-large;
+    position: relative;
 
 }
 
@@ -49,6 +53,7 @@ input{
     margin-left: 38%;
     cursor: pointer;
     color:#7d1313; 
+    position: relative;
 }
 
 #irapantalla2{
@@ -62,6 +67,7 @@ input{
     margin-left: 45%;
     border-radius: 15px;
     cursor: pointer;
+    position: relative;
 }
 
 #pantalla2{
