@@ -77,7 +77,7 @@
 
     <img id="looser" src="multimedia/looser.png">
 
-    <button id="jugardenuevo">Jugar de nuevo</button>
+    <button id="jugardenuevol">Jugar de nuevo</button>
 
     <img id="rip" src="multimedia/rip.png"> 
 
@@ -110,16 +110,17 @@ var info = document.getElementById("nombreju");
 var boton1 = document.getElementById("irapantalla2");
 
 //funciones mostrar pantalla 2
-function mostrarPantalla1(){
+function mostrarPantalla2(){
 			document.querySelector("#pantalla1").style.display = "none";
 			document.querySelector("#pantalla2").style.display = "block";
+            document.querySelector("#pantalla3").style.display = "none";
 		}
 
 //que el boton comenzar ponga header, vacie input y lleve a pantalla2
 boton1.onclick = function(){
 nombre.innerHTML = info.value;   //ponemos nombre del input en el header
 info.value="";                   // para que despues de ingresar el nombre vuelva a vaciarse el input
-mostrarPantalla1();                               // hay que agregar funcion para que lleve a pantalla 2
+mostrarPantalla2();                               // hay que agregar funcion para que lleve a pantalla 2
 
 
 }
@@ -179,13 +180,22 @@ var contadorBombas = 0;
 
 var intervalo2; //tengo que declarar la variable fuera de la funcion para que pueda darle clear desde todo el dom.
 
+//funcion que te lleva a la pantalla de looser
+function mostrarPantalla3(){
+            document.querySelector("#pantalla1").style.display = "none";
+			document.querySelector("#pantalla2").style.display = "none";
+			document.querySelector("#pantalla3").style.display = "block";
+           
+		}
+
+
 //funcion para restar 10 segundos al contador
 function cableincorrecto () {
     var timeactual = divcuentaregresiva.innerHTML;
     var resta= divcuentaregresiva.innerHTML=timeactual-10;
         if (resta<0) {
             resta= divcuentaregresiva.innerHTML=0;
-            alert("perdiste");
+          mostrarPantalla3();
         }
             clearInterval(intervalo); 
             clearInterval(intervalo2);
@@ -217,12 +227,18 @@ for(i=0;i<cables.length; i++){
 }
 }
 
-// revisar que cuando la bomba llega a cero no deja de contar,
-// sigue en -1, -2 y asi y si le das activar de nuevo vuelve a 60 pero mostrando ese bug
-//
+//funcion para que el boton jugar de nuevo lleve a pantalla1 para jugar de nuevo despues de perder
+function mostrarPantalla1(){
+            document.querySelector("#pantalla1").style.display = "block";
+			document.querySelector("#pantalla2").style.display = "none";
+			document.querySelector("#pantalla3").style.display = "none";
+		}
 
+ var btnjugardnuevol =document.getElementById("jugardenuevol");
 
-
+ btnjugardnuevol. onclick = function(){
+    mostrarPantalla1();
+ }
 
 
 </script>
