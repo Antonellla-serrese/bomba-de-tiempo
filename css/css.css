@@ -162,6 +162,13 @@ p{
    
 }
 
+#ups{
+    display: none;
+    position: absolute;
+    top: 500px;
+    margin-left: 2%;
+
+}
 
 #cable1{
     height: 300px;
@@ -251,16 +258,11 @@ p{
    cursor:pointer;
    position: relative;
 }
-#ups{
-    display: none;
-    position: relative;
-    margin-top: 20%;
-    position: relative;
 
-}
 
 #pantalla3{
     display: none;
+    
 }
 
 #fondo2{
@@ -329,4 +331,12 @@ p{
     background-color:lemonchiffon;
     color: #904c15;
     border-color: #904c15;
+}
+
+#audio2{
+    display: block;
+   -webkit-box-orient: inherit;
+   background-color: black;
+   color: aliceblue;
+   width: 5%;
 }

@@ -29,6 +29,7 @@ mostrarPantalla2();                          // funcion para que lleve a pantall
 var divcuentaregresiva = document.getElementById("cuentaregresiva");//div donde se ve la cuenta regresiva
 var activar= document.getElementById("activarbomba"); // boton que activa la bomba
 var intervalo; //tengo que declarar la variable fuera de la funcion para que pueda darle clear desde todo el dom.
+
 // funcion de la cuenta regresiva
 activar.onclick = function(){
     iniciarcuentaregresiva();
@@ -40,7 +41,8 @@ function iniciarcuentaregresiva(){
         divcuentaregresiva.innerHTML = valorinicial;
         if(valorinicial !== 0){
             valorinicial --;
-        }       
+
+        }  
     }, 1000);
 }
 
@@ -76,7 +78,7 @@ var intervalo2; //tengo que declarar la variable fuera de la funcion para que pu
 function cableincorrecto () {
         var timeactual = divcuentaregresiva.innerHTML;
         
-        var resta= timeactual-10;
+        var resta= timeactual-10;  //segundos que quedan
             if (resta<0) {
                 resta= 0;
             mostrarPantalla3();
@@ -87,6 +89,9 @@ function cableincorrecto () {
                         divcuentaregresiva.innerHTML = resta;
                         if(resta > 0){
                             resta --;
+                        } if(resta==0){
+                            mostrarPantalla3();
+                            resta=10000000000000000; //para que cuando llegue a cero pase a la pantalla de perder y nos deje jugar de nuevo
                         }
                     }, 1000);
                 document.getElementById("ups").style.display="block"; //muestro el mensaje que avisa que tiene 10seg menos
