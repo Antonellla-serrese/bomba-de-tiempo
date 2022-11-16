@@ -105,7 +105,7 @@ function cableincorrecto () {
 
 
 
-;
+
 function reiniciocable(){
     var desactivaBomba = document.getElementsByClassName("ganador");
         for(i=0;i<desactivaBomba.length;i++){
