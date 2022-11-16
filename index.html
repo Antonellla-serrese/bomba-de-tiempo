@@ -9,17 +9,11 @@
 </head>
 
 <body>
-    
-    <audio autoplay loop>
-       
-        <source src="musica.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    
+
 <header id="nombre"></header>
 
 <section class="pantallas" id="pantalla1">
-<audio src="./multimedia/musica-fondo-pantalla-1.m4a" type="audio/mpeg" autoplay="autoplay" loop="loop"></audio>
+ 
 <img id="titulo" src="multimedia/bomba-de-tiempo-text.png">
 <div id="centrar">
 
@@ -37,6 +31,10 @@
     <div>
         <button id="irapantalla2">Comenzar</button>
     </div>
+
+    <audio id="audios" controls preload="none" autoplay loop src="./multimedia/pantalla1.mp3" type="audio/mpeg" >
+   
+      </audio>
 
 </div>
 
@@ -76,8 +74,6 @@
     <p>
          Cable incorrecto!<br>
          Te quedan 10 segundos menos!<br>
-        Cable incorrecto!<br>
-        Te quedan 10 segundos menos!
     </p>
 </div>
 </section>

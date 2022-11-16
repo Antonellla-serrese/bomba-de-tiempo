@@ -3,6 +3,7 @@
 var nombre = document.getElementById("nombre");
 var info = document.getElementById("nombreju");
 var boton1 = document.getElementById("irapantalla2");
+var audio = document.getElementById("audios"); //para cambiar los audios cuando cambian las pantallas
 
 //funciones mostrar pantalla 2
 function mostrarPantalla2(){
@@ -10,6 +11,7 @@ function mostrarPantalla2(){
     document.querySelector("#pantalla2").style.display = "block";
     document.querySelector("#pantalla3").style.display = "none";
     document.querySelector("#pantalla4").style.display = "none";
+    audio.setAttribute("src", "./multimedia/tictac.mp3");
 }
 
 //que el boton comenzar ponga header, vacie input y lleve a pantalla2
@@ -159,6 +161,7 @@ function mostrarPantalla3(){
     document.querySelector("#pantalla2").style.display = "none";
     document.querySelector("#pantalla3").style.display = "block";
     document.querySelector("#pantalla4").style.display = "none";
+    audio.setAttribute("src", "./multimedia/pantalla3.mp3");
    
 }
 
@@ -170,6 +173,8 @@ function mostrarPantalla1(){
     document.querySelector("#pantalla2").style.display = "none";
     document.querySelector("#pantalla3").style.display = "none";
     document.querySelector("#pantalla4").style.display = "none";
+    audio.setAttribute("src", "./multimedia/pantalla1.mp3"); //cambia el sonido
+   
 }
 
 var btnjugardnuevol =document.getElementById("jugardenuevol");
@@ -184,6 +189,7 @@ function mostrarPantalla4(){
     document.querySelector("#pantalla2").style.display = "none";
     document.querySelector("#pantalla3").style.display = "none";
     document.querySelector("#pantalla4").style.display = "block";
+    audio.setAttribute("src", "./multimedia/pantalla4.mp3");
 }
 
 //funcion para el boton
@@ -191,4 +197,5 @@ function mostrarPantalla4(){
 var btnjugardenuevo2 = document.getElementById("jugardenuevo2");
 btnjugardenuevo2.onclick = function () {
    mostrarPantalla1 ();
+  
 }
