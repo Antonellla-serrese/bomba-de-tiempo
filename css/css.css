@@ -90,6 +90,7 @@ input{
 #cantbombas{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-size: xx-large;
+    color: #878484;
 
 
 }
@@ -235,11 +236,11 @@ p{
    cursor:pointer;
 }
 
-#cable10{
+#cable0{
     height: 300px;
     width: 25px;
    background: #320505;
-   margin-left: 20px;
+   margin-right: 20px;
    cursor:pointer;
 }
 #ups{
