@@ -1,9 +1,7 @@
-#pantalla1{
-    background-image: url(../multimedia/fondo-tenebroso.png);
-    background-position: 100%;
-    height: 100%;
-    width: 100%;
-    position: absolute;
+
+#audios{
+margin-left: 1%;
+margin-top: 6%;
 }
 
 #audios{
@@ -21,6 +19,8 @@ header{
 }
 
 #titulo{
+  width: 50%;
+  margin-left: 25%;
   width: 50%;
   margin-left: 25%;
   margin-top: 5%;
@@ -52,6 +52,7 @@ input{
     font-size: xx-large;
     border-radius: 15px;
     margin-top: 2%;
+    margin-top: 2%;
     margin-left: 38%;
     cursor: pointer;
     color:rgb(255, 255, 255); 
@@ -82,6 +83,7 @@ input{
 }
 
 #bombita{
+    margin-top: 12%;
     margin-top: 12%;
     width: 2.5%;
     margin-left: 0.5%;
@@ -139,6 +141,8 @@ input{
     margin-left: 28%;
     width: 40%;
 }
+
+
 
 
 p{
@@ -236,12 +240,15 @@ p{
    cursor:pointer;
 }
 
-#cable0{
+#cable10{
     height: 300px;
     width: 25px;
    background: #320505;
-   margin-right: 20px;
+   margin-left: 20px;
    cursor:pointer;
+}
+#ups{
+    display: none;
 }
 #ups{
     display: none;
@@ -254,6 +261,8 @@ p{
 #looser{
     width: 40%;
     margin-top: 2%;
+    width: 40%;
+    margin-top: 2%;
     margin-left: 30%;
     margin-bottom: 1%;
 
@@ -263,11 +272,13 @@ p{
     width: 60%;
     margin-top: 2%;
     margin-left: 21%;
+    margin-left: 21%;
     margin-bottom: 5%;
 }
 
 #jugardenuevol{
     font-size: xx-large;
+    width: 30%;
     width: 30%;
     margin-left: 35%;
     cursor: pointer;
