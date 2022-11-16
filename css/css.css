@@ -8,6 +8,7 @@
 
 header{
     color:#938c8c; 
+    color:#7d1313; 
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-size: xx-large;
     margin-left: 90%;
@@ -15,11 +16,22 @@ header{
     font-weight: bolder;  
     margin-top: 1%;  
     padding-right: 2%;
+    font-weight: bolder;    
+}
+
+#fondo{
+ background-position: 100%;
+ height: 100%;
+ width: 100%;
+ position: absolute;
+
 }
 
 #titulo{
   width: 60%;
   margin-left: 21%;
+  width: 50%;
+  margin-left: 25%;
   margin-top: 5%;
   position: relative;
 }
