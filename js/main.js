@@ -105,7 +105,7 @@ function cableincorrecto () {
 
 
 
-
+// funcion que desactiva una bomba
 function reiniciocable(){
     var desactivaBomba = document.getElementsByClassName("ganador");
         for(i=0;i<desactivaBomba.length;i++){
@@ -118,11 +118,11 @@ function reiniciocable(){
 
 reiniciocable();
 
+//funcion que determina que cuando hay 3 bombas desactivadas ganas
  function bomba_desactivada(){
     var cantBombas= parseInt(document.getElementById("cantbombas").innerHTML);
     var bomba_actual=cantBombas+1;
     document.getElementById("cantbombas").innerHTML=bomba_actual;
-        //desactivaste una bomba, escribir div y usar display none, etc
         reiniciar_bomba();
         if(bomba_actual==3){
             mostrarPantalla4();
