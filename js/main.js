@@ -146,7 +146,7 @@ function reiniciar_bomba(){
  function reinicio_cuenta(){
     document.getElementById("cantbombas").innerHTML="0";
  }
- function reinicio_errores(){
+ function reinicio_errores(){   //les vuelvo a dar la class cables a todos.
     for(i=0;i<cables.length; i++){
         if (cables[i].getAttribute("class")=="cables") {
             cables[i].onclick= cableincorrecto;
