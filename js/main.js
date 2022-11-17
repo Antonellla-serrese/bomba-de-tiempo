@@ -130,9 +130,9 @@ reiniciocable();
      }
      var desactivaBomba;
 function reiniciar_bomba(){
-    desactivaBomba = document.getElementsByClassName("ganador");
+    desactivaBomba = document.getElementsByClassName("ganador"); 
     for(i=0;i<desactivaBomba.length;i++){
-        if(desactivaBomba[i].getAttribute("class")=="ganador"){
+        if(desactivaBomba[i].getAttribute("class")=="ganador"){  
             desactivaBomba[i].setAttribute("class","cables");
           }
     }
